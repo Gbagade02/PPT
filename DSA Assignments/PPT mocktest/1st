@@ -1,0 +1,17 @@
+def move_zeros(nums):
+    non_zero = 0
+
+    for curr in range(len(nums)):
+        if nums[curr] != 0:
+            nums[non_zero] = nums[curr]
+            non_zero += 1
+
+    while non_zero < len(nums):
+        nums[non_zero] = 0
+        non_zero += 1
+
+    return nums
+
+nums = [0, 1, 0, 3, 12]
+result = move_zeros(nums)
+print("Output:", result)
